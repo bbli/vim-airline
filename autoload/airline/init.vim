@@ -216,7 +216,7 @@ function! airline#init#sections()
     let g:airline_section_a = airline#section#create_left(['mode', 'crypt', 'paste', 'keymap', 'spell', 'capslock', 'xkblayout', 'iminsert'])
   endif
   if !exists('g:airline_section_b')
-    if airline#util#winwidth() > 99
+    if airline#util#winwidth() > 80
       let g:airline_section_b = airline#section#create(['branch', 'battery'])
     else
       let g:airline_section_b = airline#section#create(['branch'])
@@ -239,7 +239,7 @@ function! airline#init#sections()
     let g:airline_section_y = airline#section#create_right(['ffenc'])
   endif
   if !exists('g:airline_section_z')
-    if airline#util#winwidth() > 79
+    if airline#util#winwidth() > 75
       let g:airline_section_z = airline#section#create(['windowswap', 'obsession', '%p%%', 'linenr', 'maxlinenr', 'colnr'])
     else
       let g:airline_section_z = airline#section#create(['%p%%', 'linenr', 'colnr'])
