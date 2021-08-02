@@ -354,6 +354,9 @@ function! airline#extensions#load()
     call add(s:loaded_ext, 'coc')
   endif
 
+  call airline#extensions#native_lsp#init(s:ext)
+  call add(s:loaded_ext, 'native_lsp')
+
   if (get(g:, 'airline#extensions#languageclient#enabled', 1) && exists(':LanguageClientStart'))
     call airline#extensions#languageclient#init(s:ext)
     call add(s:loaded_ext, 'languageclient')

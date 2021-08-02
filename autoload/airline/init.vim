@@ -177,6 +177,10 @@ function! airline#init#bootstrap()
         \ 'raw': '',
         \ 'accent': 'bold'
         \ })
+  call airline#parts#define('native_lsp_status', {
+        \ 'raw': '',
+        \ 'accent': 'bold'
+        \ })
   call airline#parts#define('coc_current_function', {
         \ 'raw': '',
         \ 'accent': 'bold'
@@ -220,9 +224,9 @@ function! airline#init#sections()
   endif
   if !exists('g:airline_section_c')
     if exists("+autochdir") && &autochdir == 1
-      let g:airline_section_c = airline#section#create(['%<', 'path', spc, 'readonly', 'coc_status', 'lsp_progress'])
+      let g:airline_section_c = airline#section#create(['%<', 'path', spc, 'readonly', 'native_lsp_status', 'coc_status', 'lsp_progress'])
     else
-      let g:airline_section_c = airline#section#create(['%<', 'file', spc, 'readonly', 'coc_status', 'lsp_progress'])
+      let g:airline_section_c = airline#section#create(['%<', 'file', spc, 'readonly', 'native_lsp_status', 'coc_status', 'lsp_progress'])
     endif
   endif
   if !exists('g:airline_section_gutter')
