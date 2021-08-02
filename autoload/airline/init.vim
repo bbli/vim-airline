@@ -217,9 +217,9 @@ function! airline#init#sections()
   endif
   if !exists('g:airline_section_b')
     if airline#util#winwidth() > 99
-      let g:airline_section_b = airline#section#create(['hunks', 'branch', 'battery'])
+      let g:airline_section_b = airline#section#create(['branch', 'battery'])
     else
-      let g:airline_section_b = airline#section#create(['hunks', 'branch'])
+      let g:airline_section_b = airline#section#create(['branch'])
     endif
   endif
   if !exists('g:airline_section_c')
