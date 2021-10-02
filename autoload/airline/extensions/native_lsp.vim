@@ -2,6 +2,9 @@ function! s:LspStatus() abort
     if !has('nvim')
         return ""
     endif 
+    if (g:benson_lsp_status == 0)
+        return ""
+    endif
 
   if luaeval('#vim.lsp.buf_get_clients() > 0')
     let result = luaeval("require('lsp-status').status()")
