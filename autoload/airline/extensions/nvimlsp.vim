@@ -29,8 +29,6 @@ function! airline#extensions#nvimlsp#get(type) abort
   if luaeval("pcall(require, 'vim.diagnostic')")
     let severity = a:type == 'Warning' ? 'Warn' : a:type
     let num = len(v:lua.vim.diagnostic.get(0, { 'severity': severity }))
-  elseif luaeval("pcall(require, 'vim.lsp.diagnostic')")
-    let num = v:lua.vim.lsp.diagnostic.get_count(0, a:type)
   else
     let num = v:lua.vim.lsp.util.buf_diagnostics_count(a:type)
   endif
